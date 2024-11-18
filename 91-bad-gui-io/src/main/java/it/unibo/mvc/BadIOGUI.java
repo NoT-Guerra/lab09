@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -75,7 +76,14 @@ public class BadIOGUI {
         leggi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println("Prova del 1.02");
+                try {
+                    final List<String> lette =  Files.readAllLines(new File(PATH).toPath());
+                    for (final String line: lette){
+                        System.out.println(line);
+                    }
+                } catch (IOException e2) {
+                    JOptionPane.showMessageDialog(frame, e2, "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
        
