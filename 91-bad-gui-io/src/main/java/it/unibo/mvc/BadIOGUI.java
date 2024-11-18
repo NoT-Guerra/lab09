@@ -44,7 +44,10 @@ public class BadIOGUI {
         final JPanel nuovo = new JPanel();
         nuovo.setLayout(new BoxLayout(nuovo, BoxLayout.X_AXIS));
         final JButton write = new JButton("Write on file");
+        final JButton leggi = new JButton("Leggi sul file");
+
         nuovo.add(write);
+        nuovo.add(leggi);
         canvas.add(nuovo, BorderLayout.CENTER);
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,6 +70,12 @@ public class BadIOGUI {
                     JOptionPane.showMessageDialog(frame, e1, "Error", JOptionPane.ERROR_MESSAGE);
                     e1.printStackTrace(); // NOPMD: allowed as this is just an exercise
                 }
+            }
+        });
+        leggi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                System.out.println("Prova del 1.02");
             }
         });
        
@@ -95,6 +104,7 @@ public class BadIOGUI {
          * OK, ready to push the frame onscreen
          */
         frame.setVisible(true);
+        frame.pack();
     }
 
     /**
