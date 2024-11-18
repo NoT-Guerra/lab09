@@ -1,44 +1,44 @@
 # mini MVC
 
-The class `Controller` class must implement a simple controller responsible of I/O access. 
-It considers a single file at a time, and it is able to serialize objects in it.
+La classe `Controller` deve implementare un semplice controller responsabile dell'accesso I/O.
+Considera un singolo file alla volta ed è in grado di serializzare oggetti al suo interno.
 
-Implement this class with:
+Implementa questa classe con:
 
-1. A method for setting a File as current file
-2. A method for getting the current File
-3. A method for getting the path (in form of String) of the current `File`
-4. A method that gets a `String` as input and saves its content on the current file.
-This method may throw an `IOException`.
-5. By default, the current file is "output.txt" inside the user home folder.
+1. Un metodo per impostare un File come file corrente
+2. Un metodo per ottenere il File corrente
+3. Un metodo per ottenere il percorso (in forma di String) del `File` corrente
+4. Un metodo che riceve una `String` come input e salva il suo contenuto nel file corrente.
+Questo metodo può lanciare un'`IOException`.
+5. Di default, il file corrente è "output.txt" all'interno della cartella home dell'utente.
 
-A String representing the local user home folder can be accessed using `System.getProperty("user.home")`.
-The separator symbol (/ on *nix, \ on Windows) can be obtained as String through the method `System.getProperty("file.separator")`.
-The combined use of those methods leads to a software that runs correctly on every platform.
+Una stringa che rappresenta la cartella home dell'utente locale può essere ottenuta usando `System.getProperty("user.home")`.
+Il simbolo di separazione (/ su *nix, \ su Windows) può essere ottenuto come String attraverso il metodo `System.getProperty("file.separator")`.
+L'uso combinato di questi metodi porta a un software che funziona correttamente su ogni piattaforma.
 
-Once the `Controller` is done, implement `SimpleGUI` class in such a way that:
+Una volta completato il `Controller`, implementa la classe `SimpleGUI` in modo che:
 
-1. It has a main method that starts the graphical application
-2. In its constructor, sets up the whole view
-3. The graphical interface consists of a `JTextArea` with a button "Save" right below (see `src/test/resources/ex02.png` for the expected result). 
-4. SUGGESTION: Use a `JPanel` with `BorderLayout`
-5. By default, if the graphical interface is closed the program must exit (call `setDefaultCloseOperation`)
-6. The program asks the controller to save the file if the button "Save" gets pressed.
+1. Abbia un metodo main che avvia l'applicazione grafica
+2. Nel suo costruttore, imposta l'intera vista
+3. L'interfaccia grafica consiste in un `JTextArea` con un pulsante "Save" proprio sotto (vedi `src/test/resources/ex02.png` per il risultato atteso).
+4. SUGGERIMENTO: Usa un `JPanel` con `BorderLayout`
+5. Di default, se l'interfaccia grafica viene chiusa, il programma deve uscire (chiama `setDefaultCloseOperation`)
+6. Il programma chiede al controller di salvare il file se il pulsante "Save" viene premuto.
 
-See `src/test/resources/ex02.png` to verify the expected aspect.
+Vedi `src/test/resources/ex02.png` per verificare l'aspetto atteso.
 
-Finally, implement `SimpleGUIWithFileChooser` class as follows:
+Infine, implementa la classe `SimpleGUIWithFileChooser` come segue:
 
-1. Add a `JTextField` and a button "Browse..." on the upper part of the graphical interface.
-Suggestion: use a second `JPanel` with a second `BorderLayout`, put the panel in the North of the main panel, 
-put the text field in the center of the new panel and put the button in the line_end of the new panel.
-2. The JTextField should be non modifiable. And, should display the current selected file.
-3. On press, the button should open a `JFileChooser`. The program should use the method `showSaveDialog()` to display the file chooser, 
-and if the result is equal to `JFileChooser.APPROVE_OPTION` the program should set as new file in the `Controller` the file chosen. 
-If `CANCEL_OPTION` is returned, then the program should do nothing. 
-Otherwise, a message dialog should be shown telling the user that an error has occurred (use `JOptionPane.showMessageDialog()`).
-4. When in the controller a new `File` is set, also the graphical interface must reflect such change. 
-Suggestion: do not force the controller to update the UI: in this example the UI knows when should be updated, so
-try to keep things separated.
+1. Aggiungi un `JTextField` e un pulsante "Browse..." nella parte superiore dell'interfaccia grafica.
+Suggerimento: usa un secondo `JPanel` con un secondo `BorderLayout`, metti il pannello nel North del pannello principale,
+metti il campo di testo al centro del nuovo pannello e metti il pulsante alla fine della linea del nuovo pannello.
+2. Il `JTextField` dovrebbe essere non modificabile. E dovrebbe mostrare il file selezionato corrente.
+3. Alla pressione, il pulsante dovrebbe aprire un `JFileChooser`. Il programma dovrebbe usare il metodo `showSaveDialog()` per visualizzare il file chooser,
+e se il risultato è uguale a `JFileChooser.APPROVE_OPTION`, il programma dovrebbe impostare come nuovo file nel `Controller` il file scelto.
+Se viene restituito `CANCEL_OPTION`, allora il programma non dovrebbe fare nulla.
+Altrimenti, dovrebbe essere mostrato un dialogo di messaggio che dice all'utente che si è verificato un errore (usa `JOptionPane.showMessageDialog()`).
+4. Quando nel controller viene impostato un nuovo `File`, anche l'interfaccia grafica deve riflettere tale modifica.
+Suggerimento: non forzare il controller ad aggiornare l'UI: in questo esempio l'UI sa quando deve essere aggiornata, quindi
+cerca di mantenere le cose separate.
 
-See `src/test/resources/ex03.png` to verify the expected aspect.
+Vedi `src/test/resources/ex03.png` per verificare l'aspetto atteso.
