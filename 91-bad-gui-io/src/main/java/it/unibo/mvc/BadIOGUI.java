@@ -41,8 +41,11 @@ public class BadIOGUI {
     public BadIOGUI() {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
+        final JPanel nuovo = new JPanel();
+        nuovo.setLayout(new BoxLayout(nuovo, BoxLayout.X_AXIS));
         final JButton write = new JButton("Write on file");
-        canvas.add(write, BorderLayout.CENTER);
+        nuovo.add(write);
+        canvas.add(nuovo, BorderLayout.CENTER);
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
@@ -66,6 +69,7 @@ public class BadIOGUI {
                 }
             }
         });
+       
     }
 
     private void display() {
