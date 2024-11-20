@@ -1,17 +1,11 @@
 package it.unibo.mvc;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -19,9 +13,15 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  * This class is a simple application that writes a random number on a file.
- * 
+ *
  * This application does not exploit the model-view-controller pattern, and as
  * such is just to be used to learn the basics, not as a template for your
  * applications.
@@ -60,7 +60,7 @@ public class BadIOGUI {
             public void actionPerformed(final ActionEvent e) {
                 /*
                  * This would be VERY BAD in a real application.
-                 * 
+                 *
                  * This makes the Event Dispatch Thread (EDT) work on an I/O
                  * operation. I/O operations may take a long time, during which
                  * your UI becomes completely unresponsive.
@@ -78,17 +78,15 @@ public class BadIOGUI {
             public void actionPerformed(final ActionEvent e) {
                 try {
                     final List<String> lette =  Files.readAllLines(new File(PATH).toPath());
-                    for (final String line: lette){
-                        System.out.println(line);
+                    for (final String line: lette) {
+                        System.out.println(line); //NOPMD
                     }
                 } catch (IOException e2) {
                     JOptionPane.showMessageDialog(frame, e2, "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
-       
     }
-
     private void display() {
         /*
          * Make the frame one fifth the resolution of the screen. This very method is
