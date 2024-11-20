@@ -1,5 +1,7 @@
 package it.unibo.mvc;
 
+import java.util.List;
+
 /**
  *
  *
@@ -17,8 +19,8 @@ public final class SimpleController implements Controller {
     }
 
     @Override
-    public void getPrintedString() {
-
+    public List<String> getPrintedString() {
+        return null;
     }
 
     @Override

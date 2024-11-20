@@ -18,8 +18,10 @@ import javax.swing.JTextField;
 public final class SimpleGUI {
 
     private final JFrame frame = new JFrame();
-    int PROPORTION = 5 ;
-
+    private final int proportion = 5;
+    /**
+     *
+     */
     public SimpleGUI() {
         final JPanel canvas = new JPanel();
         final JPanel canvas2 = new JPanel();
@@ -30,12 +32,11 @@ public final class SimpleGUI {
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         canvas.setLayout(new BorderLayout());
-        canvas.add(textField,BorderLayout.NORTH);
-        canvas.add(textArea,BorderLayout.CENTER);
-        canvas.add(canvas2,BorderLayout.SOUTH);
-        canvas2.add(print,BorderLayout.EAST);
-        canvas2.add(showHistory,BorderLayout.WEST);
-
+        canvas.add(textField, BorderLayout.NORTH);
+        canvas.add(textArea, BorderLayout.CENTER);
+        canvas.add(canvas2, BorderLayout.SOUTH);
+        canvas2.add(print, BorderLayout.EAST);
+        canvas2.add(showHistory, BorderLayout.WEST);
         print.addActionListener((ActionEvent e) -> {
             try {
                 // Simula un'operazione non supportata
@@ -45,7 +46,6 @@ public final class SimpleGUI {
                 System.err.println("Errore: Operazione non supportata. " + ex.getMessage());
             }
         });
-
         showHistory.addActionListener((ActionEvent e) -> {
             try {
                 // Simula un'operazione non supportata
@@ -57,17 +57,21 @@ public final class SimpleGUI {
         });
 
     }
-
+    /**
+     *
+     */
     public void display() {
         final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         final int sw = (int) screen.getWidth();
         final int sh = (int) screen.getHeight();
-        frame.setSize(sw / PROPORTION, sh / PROPORTION);
+        frame.setSize(sw / proportion, sh / proportion);
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
-
-public static void main(String[] args) {
+    /**
+     * @param args
+     */
+public static void main(final String[] args) {
     new SimpleGUI().display();
 }
 }

@@ -1,11 +1,25 @@
 package it.unibo.mvc;
 
+import java.util.List;
+
 /**
  *
  */
 public interface Controller {
+/**
+ * @throws NullPointerException
+*/
 void setNextString() throws NullPointerException;
+/**
+ *
+ */
 void getNextString();
-void getPrintedString();
+/**
+ *@return List<String>
+*/
+List<String> getPrintedString();
+/**
+ * @throws IllegalStateException
+*/
 void printCurrentString() throws IllegalStateException;
 }

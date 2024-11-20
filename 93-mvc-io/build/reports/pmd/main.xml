@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.7.0" timestamp="2024-11-20T20:30:48.268">
+<file name="C:\Users\nicho\OneDrive\Desktop\lab09\93-mvc-io\src\main\java\it\unibo\mvc\Controller.java">
+<violation beginline="12" endline="12" begincolumn="29" endcolumn="49" rule="AvoidUncheckedExceptionsInSignatures" ruleset="Design" package="it.unibo.mvc" class="Controller" method="setNextString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#avoiduncheckedexceptionsinsignatures" priority="3">
+A method or constructor should not explicitly declare unchecked exceptions in its 'throws' clause
+</violation>
+<violation beginline="16" endline="16" begincolumn="6" endcolumn="19" rule="LinguisticNaming" ruleset="Code Style" package="it.unibo.mvc" class="Controller" method="getNextString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#linguisticnaming" priority="3">
+Linguistics Antipattern - The getter 'getNextString' should not return void linguistically
+</violation>
+<violation beginline="24" endline="24" begincolumn="34" endcolumn="55" rule="AvoidUncheckedExceptionsInSignatures" ruleset="Design" package="it.unibo.mvc" class="Controller" method="printCurrentString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#avoiduncheckedexceptionsinsignatures" priority="3">
+A method or constructor should not explicitly declare unchecked exceptions in its 'throws' clause
+</violation>
+</file>
+<file name="C:\Users\nicho\OneDrive\Desktop\lab09\93-mvc-io\src\main\java\it\unibo\mvc\SimpleController.java">
+<violation beginline="12" endline="12" begincolumn="40" endcolumn="60" rule="AvoidUncheckedExceptionsInSignatures" ruleset="Design" package="it.unibo.mvc" class="SimpleController" method="setNextString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#avoiduncheckedexceptionsinsignatures" priority="3">
+A method or constructor should not explicitly declare unchecked exceptions in its 'throws' clause
+</violation>
+<violation beginline="23" endline="23" begincolumn="16" endcolumn="20" rule="ReturnEmptyCollectionRatherThanNull" ruleset="Error Prone" package="it.unibo.mvc" class="SimpleController" method="getPrintedString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_errorprone.html#returnemptycollectionratherthannull" priority="1">
+Return an empty collection rather than null.
+</violation>
+<violation beginline="27" endline="27" begincolumn="46" endcolumn="67" rule="AvoidUncheckedExceptionsInSignatures" ruleset="Design" package="it.unibo.mvc" class="SimpleController" method="printCurrentString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#avoiduncheckedexceptionsinsignatures" priority="3">
+A method or constructor should not explicitly declare unchecked exceptions in its 'throws' clause
+</violation>
+</file>
+<file name="C:\Users\nicho\OneDrive\Desktop\lab09\93-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java">
+<violation beginline="21" endline="21" begincolumn="23" endcolumn="33" rule="FinalFieldCouldBeStatic" ruleset="Design" package="it.unibo.mvc" class="SimpleGUI" variable="proportion" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#finalfieldcouldbestatic" priority="3">
+This final field could be made static
+</violation>
+<violation beginline="44" endline="47" begincolumn="15" endcolumn="14" rule="ExceptionAsFlowControl" ruleset="Design" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#exceptionasflowcontrol" priority="3">
+Exception thrown at line 43 is caught in this block.
+</violation>
+<violation beginline="46" endline="46" begincolumn="17" endcolumn="23" rule="SystemPrintln" ruleset="Best Practices" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="53" endline="56" begincolumn="15" endcolumn="14" rule="ExceptionAsFlowControl" ruleset="Design" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#exceptionasflowcontrol" priority="3">
+Exception thrown at line 52 is caught in this block.
+</violation>
+<violation beginline="55" endline="55" begincolumn="17" endcolumn="23" rule="SystemPrintln" ruleset="Best Practices" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+</file>
+</pmd>
