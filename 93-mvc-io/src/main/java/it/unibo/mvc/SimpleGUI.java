@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -36,21 +36,26 @@ public final class SimpleGUI {
         canvas2.add(print,BorderLayout.EAST);
         canvas2.add(showHistory,BorderLayout.WEST);
 
-        print.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        print.addActionListener((ActionEvent e) -> {
+            try {
+                // Simula un'operazione non supportata
                 throw new UnsupportedOperationException("Not supported yet.");
+            } catch (UnsupportedOperationException ex) {
+                // Gestisci l'eccezione
+                System.err.println("Errore: Operazione non supportata. " + ex.getMessage());
             }
-
         });
 
-        showHistory.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        showHistory.addActionListener((ActionEvent e) -> {
+            try {
+                // Simula un'operazione non supportata
                 throw new UnsupportedOperationException("Not supported yet.");
+            } catch (UnsupportedOperationException ex) {
+                // Gestisci l'eccezione
+                System.err.println("Errore: Operazione non supportata. " + ex.getMessage());
             }
-
         });
+
     }
 
     public void display() {
