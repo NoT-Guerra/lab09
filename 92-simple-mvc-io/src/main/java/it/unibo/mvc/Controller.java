@@ -12,22 +12,34 @@ public class Controller {
     private static final String HOME = System.getProperty("user.home"); 
     private static final String DEFAULT_FILE = "output.txt";
     private File fileopen = new File(HOME + File.separator + DEFAULT_FILE);
-    public void SetFile(final File file){
+    /**
+      *@param file
+    */
+    public void setFile(final File file) {
         if (file.exists() && file.isFile()) {
             fileopen = file;
         } else {
             throw new IllegalArgumentException("file does not exists");
         }
     }
-    public  File CurrentFile(){
+    /**
+     * @return fileopen
+     */
+    public  File currentFile() {
     return fileopen;
     }
-    public String PathFile() {
+    /**
+     * @return fileopen
+     */
+    public String pathFile() {
         return fileopen.getAbsolutePath();
     }
-    public void SaveString(String Scritta) throws IOException {
-         try (PrintStream ps = new PrintStream(PathFile(), StandardCharsets.UTF_8)) {
-                    ps.println(Scritta);
+    /**
+     * @param scritta
+     */
+    public void saveString(final String scritta) throws IOException {
+         try (PrintStream ps = new PrintStream(pathFile(), StandardCharsets.UTF_8)) {
+                    ps.println(scritta);
                 }
-};
+            }
 }

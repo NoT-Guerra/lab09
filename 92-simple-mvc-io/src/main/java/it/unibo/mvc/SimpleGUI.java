@@ -1,16 +1,17 @@
 package it.unibo.mvc;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 /**
  * A very simple program using a graphical interface.
@@ -20,7 +21,9 @@ public final class SimpleGUI {
 
     private final JFrame frame = new JFrame();
     private static final int PROPORTION = 5;
-
+/**
+     * @param controller
+     */
     public SimpleGUI(final Controller controller) {
         final JPanel canvas = new JPanel();
         final JTextArea text = new JTextArea();
@@ -32,16 +35,18 @@ public final class SimpleGUI {
         canvas.add(save, BorderLayout.SOUTH);
         save.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent event) {
+            public void actionPerformed(final ActionEvent event) {
                 try {
-                    controller.SaveString(text.getText());
+                    controller.saveString(text.getText());
                 } catch (IOException a) {
                     JOptionPane.showMessageDialog(null, a.getMessage(), "An error was made", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
     }
-
+    /**
+     * 
+     */
     public void display() {
         final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         final int sw = (int) screen.getWidth();
@@ -50,7 +55,9 @@ public final class SimpleGUI {
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
-
+/**
+     * @param args
+     */
     public static void main(final String[] args) {
         new SimpleGUI(new Controller()).display();
     }

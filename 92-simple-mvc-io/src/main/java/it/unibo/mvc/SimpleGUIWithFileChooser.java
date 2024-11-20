@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -21,14 +22,15 @@ public final class SimpleGUIWithFileChooser {
 
     private final JFrame frame = new JFrame();
     private static final int PROPORTION = 5;
-
-    @SuppressWarnings("Convert2Lambda") //Because it create an undesired warning 
+    /**
+     * @param controller
+     */
     public SimpleGUIWithFileChooser(final Controller controller) {
         final JPanel canvas = new JPanel();
         final JPanel canvas2 = new JPanel();
         final JTextField text = new JTextField();
         text.setEditable(false); // Rende il JTextField non modificabile
-        text.setText(controller.PathFile()); // Imposta il testo iniziale al file corrente nel controller
+        text.setText(controller.pathFile()); // Imposta il testo iniziale al file corrente nel controller
         final JButton browse = new JButton("Browse");
         canvas.setLayout(new BorderLayout());
         canvas2.setLayout(new BorderLayout());
@@ -40,14 +42,14 @@ public final class SimpleGUIWithFileChooser {
 
         browse.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent event) {
+            public void actionPerformed(final ActionEvent event) {
                 final JFileChooser fileChooser = new JFileChooser();
-                int result = fileChooser.showOpenDialog(frame);
+                final int result = fileChooser.showOpenDialog(frame);
                 switch (result) {
                     case JFileChooser.APPROVE_OPTION -> {
                         final File selectedFile = fileChooser.getSelectedFile();
                         try {
-                            controller.SetFile(selectedFile); // Imposta il file nel controller
+                            controller.setFile(selectedFile); // Imposta il file nel controller
                             text.setText(selectedFile.getAbsolutePath()); // Mostra il percorso nel JTextField
                         } catch (IllegalArgumentException ex) {
                             JOptionPane.showMessageDialog(frame,
@@ -68,7 +70,9 @@ public final class SimpleGUIWithFileChooser {
             }
         });
     }
-
+/**
+     * 
+     */
     public void display() {
         final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         final int sw = (int) screen.getWidth();
@@ -77,7 +81,9 @@ public final class SimpleGUIWithFileChooser {
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
-
+/**
+     * @param args
+     */
     public static void main(final String[] args) {
         new SimpleGUIWithFileChooser(new Controller()).display();
     }
