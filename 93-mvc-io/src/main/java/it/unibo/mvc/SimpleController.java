@@ -1,6 +1,7 @@
 package it.unibo.mvc;
-
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -8,14 +9,17 @@ import java.util.List;
  */
 public final class SimpleController implements Controller {
 
-    @Override
-    public void setNextString() throws NullPointerException {
+    private final List<String> stringHistory = new LinkedList<>();
+    private String nextString;
 
+    @Override
+    public void  setNextString(final String nextString) {
+        this.nextString= Objects.requireNonNull(nextString);
     }
 
     @Override
-    public void getNextString() {
-
+    public String getNextString() {
+        return this.nextString;
     }
 
     @Override
@@ -24,7 +28,15 @@ public final class SimpleController implements Controller {
     }
 
     @Override
-    public void printCurrentString()  throws IllegalStateException {
+    public void printCurrentString() {
+        if (this.nextString == null) {
+            throw new IllegalStateException("There is no string set");
+        }
+        stringHistory.add(this.nextString);
+        System.out.println(this.nextString); // NOPMD
     }
 
+    public List<String> getStringHistory() {
+        return stringHistory;
+    }
 }
