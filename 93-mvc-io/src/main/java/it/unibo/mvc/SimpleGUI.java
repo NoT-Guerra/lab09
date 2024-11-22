@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +13,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
- * A very simple program using a graphical interface.
  *
  */
 public final class SimpleGUI {
@@ -20,9 +20,9 @@ public final class SimpleGUI {
     private final JFrame frame = new JFrame();
     private final int proportion = 5;
     /**
-     *
+     * @param controller the controller to manage the logic
      */
-    public SimpleGUI() {
+    public SimpleGUI(final Controller controller) {
         final JPanel canvas = new JPanel();
         final JPanel canvas2 = new JPanel();
         final JTextField textField = new JTextField();
@@ -38,27 +38,23 @@ public final class SimpleGUI {
         canvas2.add(print, BorderLayout.EAST);
         canvas2.add(showHistory, BorderLayout.WEST);
         print.addActionListener((ActionEvent e) -> {
-            try {
-                // Simula un'operazione non supportata
-                throw new UnsupportedOperationException("Not supported yet.");
-            } catch (UnsupportedOperationException ex) {
-                // Gestisci l'eccezione
-                System.err.println("Errore: Operazione non supportata. " + ex.getMessage());
+            final String text = textField.getText();
+            if (!text.isBlank()) {
+                controller.setNextString(text);
+                controller.printCurrentString();
+                textField.setText(""); // Clear the text field after printing
             }
         });
         showHistory.addActionListener((ActionEvent e) -> {
-            try {
-                // Simula un'operazione non supportata
-                throw new UnsupportedOperationException("Not supported yet.");
-            } catch (UnsupportedOperationException ex) {
-                // Gestisci l'eccezione
-                System.err.println("Errore: Operazione non supportata. " + ex.getMessage());
+            textArea.setText(""); // Clear the text area to avoid duplicates
+            final List<String> history = controller.getPrintedString();
+            for (final String string : history) {
+                textArea.append(string + " ");
             }
         });
-
     }
     /**
-     *
+     * Display the GUI.
      */
     public void display() {
         final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -69,9 +65,11 @@ public final class SimpleGUI {
         frame.setVisible(true);
     }
     /**
-     * @param args
+     * Main method to launch the application.
+     *
+     * @param args command-line arguments
      */
-public static void main(final String[] args) {
-    new SimpleGUI().display();
-}
+    public static void main(final String[] args) {
+        new SimpleGUI(new SimpleController()).display();
+    }
 }

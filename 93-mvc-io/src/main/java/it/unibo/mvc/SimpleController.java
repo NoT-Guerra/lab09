@@ -14,7 +14,7 @@ public final class SimpleController implements Controller {
 
     @Override
     public void  setNextString(final String nextString) {
-        this.nextString= Objects.requireNonNull(nextString);
+        this.nextString = Objects.requireNonNull(nextString);
     }
 
     @Override
@@ -24,7 +24,7 @@ public final class SimpleController implements Controller {
 
     @Override
     public List<String> getPrintedString() {
-        return null;
+        return List.copyOf(stringHistory);
     }
 
     @Override
@@ -35,7 +35,10 @@ public final class SimpleController implements Controller {
         stringHistory.add(this.nextString);
         System.out.println(this.nextString); // NOPMD
     }
-
+/**
+ *
+ * @return stringHistory
+ */
     public List<String> getStringHistory() {
         return stringHistory;
     }

@@ -8,12 +8,14 @@ import java.util.List;
 public interface Controller {
 /**
  * @throws NullPointerException
+ * @param nextString
+ *
 */
-void setNextString() throws NullPointerException;
+void setNextString(String nextString);
 /**
  *
  */
-void getNextString();
+ String getNextString();
 /**
  *@return List<String>
 */
@@ -21,5 +23,5 @@ List<String> getPrintedString();
 /**
  * @throws IllegalStateException
 */
-void printCurrentString() throws IllegalStateException;
+void printCurrentString();
 }
