@@ -1,17 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.7.0" timestamp="2024-11-22T16:31:19.254">
-<file name="C:\Users\nicho\OneDrive\Desktop\lab09\93-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java">
-<violation beginline="22" endline="22" begincolumn="23" endcolumn="33" rule="FinalFieldCouldBeStatic" ruleset="Design" package="it.unibo.mvc" class="SimpleGUI" variable="proportion" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#finalfieldcouldbestatic" priority="3">
-This final field could be made static
-</violation>
-<violation beginline="28" endline="28" begincolumn="38" endcolumn="47" rule="UselessQualifiedThis" ruleset="Code Style" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#uselessqualifiedthis" priority="3">
-Useless qualified this usage in the same class.
-</violation>
-<violation beginline="45" endline="45" begincolumn="17" endcolumn="26" rule="UselessQualifiedThis" ruleset="Code Style" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#uselessqualifiedthis" priority="3">
-Useless qualified this usage in the same class.
-</violation>
-<violation beginline="46" endline="46" begincolumn="17" endcolumn="26" rule="UselessQualifiedThis" ruleset="Code Style" package="it.unibo.mvc" class="SimpleGUI" method="SimpleGUI" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#uselessqualifiedthis" priority="3">
-Useless qualified this usage in the same class.
-</violation>
-</file>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.7.0" timestamp="2024-11-22T18:08:06.561">
 </pmd>

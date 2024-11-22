@@ -13,7 +13,7 @@ public interface Controller {
 */
 void setNextString(String nextString);
 /**
- *
+ *@return String
  */
  String getNextString();
 /**

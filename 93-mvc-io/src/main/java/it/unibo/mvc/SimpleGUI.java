@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 public final class SimpleGUI {
 
     private final JFrame frame = new JFrame();
-    private final int proportion = 5;
+    private static final int INGRANDIMENTO = 5;
     /**
      * @param controller the controller to manage the logic
      */
@@ -60,10 +60,12 @@ public final class SimpleGUI {
         final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         final int sw = (int) screen.getWidth();
         final int sh = (int) screen.getHeight();
-        frame.setSize(sw / proportion, sh / proportion);
+
+        frame.setSize(sw / INGRANDIMENTO, sh / INGRANDIMENTO);
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
+
     /**
      * Main method to launch the application.
      *

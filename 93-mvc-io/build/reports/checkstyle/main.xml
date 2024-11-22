@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="10.20.1">
 <file name="C:\Users\nicho\OneDrive\Desktop\lab09\93-mvc-io\src\main\java\it\unibo\mvc\Controller.java">
-<error line="18" severity="error" message="@return tag should be present and have description." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 </file>
 <file name="C:\Users\nicho\OneDrive\Desktop\lab09\93-mvc-io\src\main\java\it\unibo\mvc\SimpleController.java">
 </file>

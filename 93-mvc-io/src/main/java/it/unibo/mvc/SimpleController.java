@@ -1,4 +1,5 @@
 package it.unibo.mvc;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -37,9 +38,9 @@ public final class SimpleController implements Controller {
     }
 /**
  *
- * @return stringHistory
+ * @return rrayList<>
  */
     public List<String> getStringHistory() {
-        return stringHistory;
+        return new ArrayList<>(this.stringHistory);
     }
 }
